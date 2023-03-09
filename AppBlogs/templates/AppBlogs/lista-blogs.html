@@ -1,0 +1,38 @@
+{% extends 'AppHome/home.html' %}
+
+{% block titulo %}
+Lista Blogs
+{% endblock %}
+
+{% block contenido %}
+<div class="gaming-library">
+    <div class="col-lg-7">
+        <div class="heading-section">
+            <div class="row">
+                <br/>
+                <p style="color: white;">Blogs<br></p>
+                <br/>
+                <ul>
+                    {% for blogs in object_list %}
+                    <br/>
+                    <li>
+                        <p style="color: rgb(219, 20, 60);">{{ blogs.autor }}  - {{ blogs.titulo }}</p>
+                        <p>
+                            <a href="{% url 'ver' blogs.id %}">Ver</a>
+                            {% if user.id == blogs.autor.id %}
+                                <a href="{% url 'editar' blogs.id %}">Editar</a>
+                                <a href="{% url 'borrar' blogs.id %}">Eliminar</a>
+                            {% endif %}
+                        </p>
+                    </li>
+                    <br/>
+                    {% endfor %}
+                </ul>
+                <br/><br/>
+                <a href="{% url 'home' %}">Volver</a>
+                <br/>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock contenido %}

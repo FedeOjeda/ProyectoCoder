@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <title>{% block titulo %} World - Blogs {% endblock %}</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'AppHome/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="{% static 'AppHome/assets/css/fontawesome.css' %}">
+    <link rel="stylesheet" href="{% static 'AppHome/assets/css/templatemo-cyborg-gaming.css' %}">
+    <link rel="stylesheet" href="{% static 'AppHome/assets/css/owl.css' %}">
+    <link rel="stylesheet" href="{% static 'AppHome/assets/css/animate.css' %}">
+    <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+<!--
+
+TemplateMo 579 Cyborg Gaming
+
+https://templatemo.com/tm-579-cyborg-gaming
+
+-->
+  </head>
+
+<body>
+
+  <!-- ***** Preloader Start ***** -->
+  <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Preloader End ***** -->
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky">
+    <div class="container">
+        <div class="row">
+            <div class="col-20">
+              <nav class="main-nav">
+                <!-- ***** Logo Start ***** -->
+                <h3><a href="{% url 'home' %}" class="active">World - Blogs</a></h3>  
+                <!-- ***** Logo End ***** -->
+                <!-- ***** Menu Start ***** -->
+                <ul class="nav">
+                  <li><a href="{% url 'home' %}" class="active">Home</a></li>
+                  <li><a href="{% url 'lista' user.id %}" class="active">Blogs</a></li>
+                  <li><a href="{% url 'crear-blog' %}" class="active">Crear Blog</a></li>
+                  <li><a href="{% url 'mensajes' %}" class="active">Mensajes</a></li>
+                  <li><a href="{% url 'about' %}" class="active">About</a></li>
+                  {% if user.is_authenticated %}
+                    {% if user.avatar %}
+                      <li><a href="{% url 'account' %}" > {{ user.username }} <img src="{{ user.avatar.logo.url }}" class="rounded-circle" height="40px" alt=""> </a></li>
+                    {% else %}
+                    <li><a href="{% url 'account' %}" > {{ user.username }}</a></li>
+                    {% endif %}
+                  {% else %}
+                  <li><a href="{% url 'account' %}">Account </a></li>
+                  {% endif %}
+                </ul>   
+                  <a class='menu-trigger'>
+                    <span>Menu</span>
+                  </a>
+              <!-- ***** Menu End ***** -->
+              </nav>
+            </div>
+        </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="page-content">
+
+  <!-- ***** Banner Start ***** -->
+  <div class="main-banner">
+    <div class="row">
+      <div class="col-lg-7">
+        <div class="header-text">
+            <h6>Bienvenidos a World - Blogs</h6>
+            <p><h6>La página de blogs más polpuar del mundo</h6></p>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'lista' user.id %}" >Blogs</a></li>
+            <li><a href="{% url 'crear-blog' %}" >Crear Blog</a></li>
+            <li><a href="{% url 'mensajes' %}" >Mensajes</a></li>
+            <li><a href="{% url 'about' %}" >About</a></li>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Banner End ***** -->
+  {% block contenido %}
+         
+  {% endblock contenido %}
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <p>Copyright © 2036 <a href="#">Cyborg Gaming</a>. All rights reserved. 
+          <br>Design: <a href="https://templatemo.com" target="_blank" title="free CSS templates">TemplateMo</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+  <script src="{% static 'AppHome/vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'AppHome/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+
+  <script src="{% static 'AppHome/assets/js/isotope.min.js' %}"></script>
+  <script src="{% static 'AppHome/assets/js/owl-carousel.js' %}"></script>
+  <script src="{% static 'AppHome/assets/js/tabs.js' %}"></script>
+  <script src="{% static 'AppHome/assets/js/popup.js' %}"></script>
+  <script src="{% static 'AppHome/assets/js/custom.js' %}"></script>
+
+
+  </body>
+
+</html>

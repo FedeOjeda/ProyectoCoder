@@ -1,0 +1,25 @@
+{% extends 'AppHome/home.html' %}
+
+{% block titulo %}
+Ver Blog
+{% endblock %}
+
+{% block contenido %}
+<div class="gaming-library" style="border-color: #1f2122;">
+    <div class="card mb-3" style=" background-color: black;">
+        <img src="{{ blogs.imagen.url }}" class="card-img-top" alt="">
+    </div>
+    <div class="card-body" style="background-color: #1f2122;">
+      <h2 class="card-text" style="color: white;">{{ blogs.titulo }}</h2><br>
+      <h6 class="card-text" style="color: white;"><u>{{ blogs.subtitulo }}</u></h6>
+      <br/>
+      <p class="card-text" style="color: white;">{{ blogs.cuerpo }}</p>
+      <br/>
+      <p class="small text-muted"><p style="color: rgba(223, 29, 93, 0.805);"> Fecha: {{blogs.fecha }} </p></p>
+      <p class="small text-muted"><p style="color: rgba(223, 29, 93, 0.805);"> Autor: {{ blogs.autor }} </p></p>
+    </div>
+    <br/>
+    <a href="{% url 'lista' user.id %}">Volver</a>
+    <br/>
+</div>
+{% endblock contenido %}

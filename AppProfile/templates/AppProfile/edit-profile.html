@@ -1,0 +1,22 @@
+{% extends 'AppHome/home.html' %}
+
+{% block titulo %}
+Editar Perfil
+{% endblock %}
+
+{% block contenido %}
+<!-- ***** Gaming Library Start ***** -->
+<div class="gaming-library">
+    <div class="col-lg-7">
+        <div class="heading-section">
+            <div class="row">
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit">Guardar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock contenido %}

@@ -1,0 +1,23 @@
+{% extends 'AppHome/home.html' %}
+
+{% block titulo %}
+Iniciar Sesión
+{% endblock %}
+
+{% block contenido %}
+<section class="col-lg-12">
+    <div class="gaming-library"  style="background-color: rgb(124, 118, 118);">
+        <div class="col-lg-12">
+            <p style="color: black;">Iniciar Sesión</p>
+            {% if mensaje %}
+            <p style="color: white;">{{ mensaje }}</p>
+            {% endif %}
+            <form action="" method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Iniciar sesion</button>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}

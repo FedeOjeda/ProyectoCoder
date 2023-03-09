@@ -1,0 +1,25 @@
+{% extends 'AppHome/home.html' %}
+
+{% block titulo %}
+Registrar Usuario
+{% endblock %}
+
+{% block contenido %}
+<section class="col-lg-12">
+    <div class="gaming-library" style="background-color: rgb(124, 118, 118);">
+        <div class="row">
+            <div class="col-lg-12">
+                <p style="color: black;">Registro de Usuario</p>
+                {% if mensaje %}
+                <p style="color: white;">{{ mensaje }}</p>
+                {% endif %}
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit">Crear Usuario</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

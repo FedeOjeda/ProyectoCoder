@@ -1,0 +1,23 @@
+{% extends 'AppHome/home.html' %}
+
+{% block titulo %}
+Avatar
+{% endblock %}
+
+{% block contenido %}
+<!-- ***** Gaming Library Start ***** -->
+<div class="gaming-library" style="background-color: rgb(124, 118, 118);">
+    <div class="col-lg-7">
+        <div class="heading-section">
+            <div class="row">
+                    <p style="color: black;">Avatar</p>
+                    <form method="post" enctype="multipart/form-data"> 
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <button type="submit">Guardar Avatar</button>
+                    </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock contenido %}

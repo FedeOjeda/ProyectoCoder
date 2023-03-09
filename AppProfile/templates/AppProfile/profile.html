@@ -1,0 +1,34 @@
+{% extends 'AppHome/home.html' %}
+
+{% block titulo %}
+Opcines Perfil
+{% endblock %}
+
+{% block contenido %}
+<!-- ***** Gaming Library Start ***** -->
+<div class="gaming-library">
+  <div class="col-lg-7">
+    <div class="heading-section">
+      <div class="row">
+        <p style="color: white;">
+          <u>Opciones de Usuario</u>
+        </p>
+        {% if user.is_authenticated %}
+          {% if user.perfiles and user.avatar %}
+            <a href="{% url 'view-profile' %}">Ver Perfil</a>
+            <a href="{% url 'edit-profile' %}">Editar Perfil</a>
+            <a href="{% url 'editar-avatar' user.avatar.id %}">Actualizar Avatar</a>
+          {% else %}
+            <a href="{% url 'create-profile' %}">Agregar Perfil</a>
+            <a href="{% url 'crear-avatar' user.id %}">Agregar Avatar</a>
+          {% endif %}
+        <a href="{% url 'edit-user' %}">Editar Usuario</a>
+        <a href="{% url 'cambiar-contraseña' %}">Cambiar Contraseña</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ***** Gaming Library End ***** -->
+{% endblock contenido %}
+

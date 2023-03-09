@@ -1,0 +1,28 @@
+{% extends 'AppHome/home.html' %}
+
+{% block titulo %}
+Elimanr Blog
+{% endblock %}
+
+{% block contenido %}
+<div class="gaming-library">
+    <div class="col-lg-7">
+        <div class="heading-section">
+            <div class="row">
+                {% if user.id == blogs.autor.id %}
+                <p style="color: white;">
+                    <u>Eliminar Blog</u>   
+                </p>
+                <form method="POST">
+                {% csrf_token %}
+                    <p style="color: white;">Seguro que desea eliminar el blog: {{ object }}</p>
+                    <input type="submit" value="Seguro">
+                </form>
+                {% else %}
+                <p style="color: white;">No puedes acceder aquí</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock contenido %}

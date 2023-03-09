@@ -1,0 +1,25 @@
+{% extends 'AppHome/home.html' %}
+
+{% block titulo %}
+Ver Perfil
+{% endblock %}
+
+{% block contenido %}
+<div class="gaming-library" style="border-color: #1f2122;">
+    <div class="card mb-2" style="max-width: 540px; background-color: #1f2122; " >
+        <div class="row g-0">
+            <div class="col-md-3">
+                <img src="{{ perfil.imagen.url }}" class="img-fluid rounded-start" alt="">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body" style="background-color: #1f2122;">
+                    <p class="card-text" style="color: rgb(220, 18, 106);">{{ user.first_name }} {{ user.last_name }}</p>
+                    <p class="card-text" style="color: white;">{{ perfil.bio }}</p>
+                    <p class="small text-muted"><p style="color: rgba(223, 29, 93, 0.805);"> Email: {{user.email}} </p></p>
+                    <p class="small text-muted"><a href="{{ perfil.link }}" style="color: rgba(223, 29, 93, 0.805);"> Link: {{ perfil.link }} </a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock contenido %}

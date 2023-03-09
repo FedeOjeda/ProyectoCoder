@@ -1,0 +1,21 @@
+{% extends 'AppHome/home.html' %}
+
+{% block titulo %}
+Sesión Iniciada
+{% endblock %}
+
+{% block contenido %}
+<!-- ***** Gaming Library Start ***** -->
+<div class="gaming-library">
+  <div class="col-lg-7">
+    <div class="heading-section">
+      <div class="row">
+        {% if mensaje %}
+          <p style="color: white;">{{ mensaje }}</p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ***** Gaming Library End ***** -->
+{% endblock contenido %}
