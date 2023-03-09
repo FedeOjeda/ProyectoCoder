@@ -1,8 +1,7 @@
 from django.contrib.auth.models import User
 from django.db import models
 
-# Create your models here.
-
+# Modelo del perfil.
 class Perfiles(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     bio = models.TextField(max_length=500, blank=True)
@@ -14,7 +13,8 @@ class Perfiles(models.Model):
     
     class Meta:
         verbose_name_plural = 'Perfiles'
-        
+
+# Modelo del avatar.   
 class Avatar(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     logo = models.ImageField(upload_to='imagen-avatar', null=True, blank=True)

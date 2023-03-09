@@ -9,12 +9,13 @@ from django.views.generic.edit import CreateView, UpdateView
 
 from .models import Perfiles, Avatar
 from .forms import UserEditForm, PerfilFormulario, CustomPasswordChangeForm
-# Create your views here.
 
+# Vista de la página de para ver las opciones del perfil.
 @login_required
 def perfildetalle(request):
     return render(request, 'AppProfile/profile.html')
 
+# Vista de la página para cambiar la contraseña.
 @login_required
 def cambiar_contraseña(request):
     if request.method == 'POST':
@@ -28,6 +29,7 @@ def cambiar_contraseña(request):
         form = CustomPasswordChangeForm(request.user)
     return render(request, 'AppProfile/cambiar-contraseña.html', {'form': form})
 
+# Vista de la página de para editar los datos del usuario.
 @login_required
 def editar_usuario(request):
     usuario = User.objects.get(username=request.user)
@@ -56,6 +58,7 @@ def editar_usuario(request):
         
     return render(request, 'AppProfile/edit-user.html',{'mi_formulario': mi_formulario, 'usuario': usuario})
 
+# Vista de la página de para crear el perfil.
 @login_required
 def crear_perfil(request):
     if request.method == 'POST':
@@ -70,6 +73,7 @@ def crear_perfil(request):
     context = {'form': form}
     return render(request, 'AppProfile/create-profile.html', context)
 
+# Vista de la página de para editar el perfil.
 @login_required
 def editar_perfil(request):
     user_profile = request.user.perfiles
@@ -83,19 +87,22 @@ def editar_perfil(request):
     context = {'form': form}
     return render(request, 'AppProfile/edit-profile.html', context)
 
+# Vista de la página de para ver el perfil.
 @login_required
 def ver_perfil(request):
     perfil = Perfiles.objects.get(user=request.user)
     contexto = {'perfil':perfil}
     return render(request, 'AppProfile/view-profile.html', contexto)
 
+# Vista de la página de para agregar el avatar.
 class AgregarAvatar(LoginRequiredMixin, CreateView):
    
     model = Avatar
     template_name = 'AppProfile/agregar-avatar.html'
     success_url = reverse_lazy('home')
     fields = '__all__'
-    
+
+# Vista de la página de para cambiar el avatar.
 class EditarAvatar(LoginRequiredMixin, UpdateView):
     model = Avatar
     template_name = 'AppProfile/agregar-avatar.html'

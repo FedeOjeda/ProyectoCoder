@@ -2,6 +2,7 @@ from django.urls import path
 
 from .views import *
 
+# Urls de la pagína del perfil.
 urlpatterns = [
     path('profile/', perfildetalle, name ='profile'),
     path('edit-user/', editar_usuario, name ='edit-user'),

@@ -1,9 +1,8 @@
 from django.shortcuts import render
-from django.contrib.auth.models import User
 
 from .forms import MyUserCreationForm
-# Create your views here.
 
+# Vista de la página de para registrarse.
 def register(request):
     if request.method == 'POST':
         form = MyUserCreationForm(request.POST)

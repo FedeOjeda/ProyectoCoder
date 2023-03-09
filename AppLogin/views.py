@@ -2,10 +2,11 @@ from django.shortcuts import render
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, logout, authenticate
 
-# Create your views here.
+# Vista para confirmar el inicio de sesión.
 def login_confirmado(request):
     return render(request, 'AppLogin/login-confirmado.html')
 
+# Vista del formulario para iniciar sesión.
 def login_request(request):
     
     if request.method == 'POST':

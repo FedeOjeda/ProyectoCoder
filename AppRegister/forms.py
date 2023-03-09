@@ -2,6 +2,7 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
+# Formulario para crear el usuario.
 class MyUserCreationForm(UserCreationForm):
 
     username = forms.CharField(label='Nombre de usuario', widget=forms.TextInput)
