@@ -13,9 +13,13 @@ Crear Perfil
                 <form method="post" enctype="multipart/form-data">
                     {% csrf_token %}
                     {{ form.as_p }}
+                    <br/>
                     <button type="submit">Crear Perfil</button>
                 </form>
             </div>
+            <br/><br/>
+            <a href="{% url 'profile' %}"> Volver</a>
+            <br/>
         </div>
     </div>
 </div>

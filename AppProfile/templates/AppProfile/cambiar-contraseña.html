@@ -6,17 +6,21 @@ Avatar
 
 {% block contenido %}
 <!-- ***** Gaming Library Start ***** -->
-<div class="gaming-library" style="background-color: rgb(124, 118, 118);">
+<div class="gaming-library">
     <div class="col-lg-7">
         <div class="heading-section">
             <div class="row">
-                <p style="color: black;">Contraseña</p>
+                <p style="color: white;">Contraseña</p>
                 <form method="POST">
                     {% csrf_token %}
                     {{ form.as_p }}
+                    <br/>
                     <button type="submit">Cambiar Contraseña</button>
                 </form>
             </div>
+            <br/><br/>
+            <a href="{% url 'profile' %}"> Volver</a>
+            <br/>
         </div>
     </div>
 </div>

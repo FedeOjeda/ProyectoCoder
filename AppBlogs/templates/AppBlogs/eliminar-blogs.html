@@ -10,18 +10,21 @@ Elimanr Blog
         <div class="heading-section">
             <div class="row">
                 {% if user.id == blogs.autor.id %}
-                <p style="color: white;">
-                    <u>Eliminar Blog</u>   
-                </p>
+                <p style="color: white;">Eliminar Blog</p>
                 <form method="POST">
                 {% csrf_token %}
-                    <p style="color: white;">Seguro que desea eliminar el blog: {{ object }}</p>
-                    <input type="submit" value="Seguro">
+                    <br/><br/>
+                    <p style="color: white;"> ¿Seguro que desea eliminar el blog: {{ object }}?</p>
+                    <br/>
+                    <input type="submit" value="Eliminar">
                 </form>
                 {% else %}
                 <p style="color: white;">No puedes acceder aquí</p>
                 {% endif %}
             </div>
+            <br/><br/>
+            <a href="{% url 'lista' user.id %}"> Volver</a>
+            <br/>
         </div>
     </div>
 </div>
