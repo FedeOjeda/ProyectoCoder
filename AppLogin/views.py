@@ -20,7 +20,7 @@ def login_request(request):
 
             if user is not None:
                 login(request, user)
-                contexto = {'mensaje':f'Bienvenido {usuario} a Games - Blog'}
+                contexto = {'mensaje':f'Bienvenido {usuario} a World - Blogs'}
                 return render(request, 'AppLogin/login-confirmado.html', contexto)
             
             else:
