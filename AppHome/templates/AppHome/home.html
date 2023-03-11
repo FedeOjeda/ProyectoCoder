@@ -64,10 +64,10 @@ https://templatemo.com/tm-579-cyborg-gaming
                     {% if user.avatar %}
                       <li><a href="{% url 'account' %}" > {{ user.username }} <img src="{{ user.avatar.logo.url }}" class="rounded-circle" height="40px" alt=""> </a></li>
                     {% else %}
-                    <li><a href="{% url 'account' %}" > {{ user.username }}</a></li>
+                    <li><a href="{% url 'account' %}" > {{ user.username }} <img src="{% static 'AppHome/assets/images/blank.jpg' %}" class="rounded-circle" height="40px" alt=""> </a></li>
                     {% endif %}
                   {% else %}
-                  <li><a href="{% url 'account' %}">Account </a></li>
+                  <li><a href="{% url 'account' %}">Account <img src="{% static 'AppHome/assets/images/blank.jpg' %}" class="rounded-circle" height="40px" alt=""> </a></li>
                   {% endif %}
                 </ul>   
                   <a class='menu-trigger'>
