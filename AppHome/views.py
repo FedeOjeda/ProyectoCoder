@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.views.generic import TemplateView
 
 # Vista de la página de inicio.
 def inicio(request):
@@ -12,9 +13,10 @@ def informacion(request):
 def account(request):
     return render(request, 'AppHome/account.html')
 
-# Vista de la página de para la página mensajes con el error 404.
-def error(request):
-    return render(request, 'AppHome/404.html')
+# Vista de la página de para acceder a las opciones del perfil/usuario.
+def mensaje(request):
+    return render(request, 'AppHome/mensaje.html')
 
-def page_not_found_view(request, excepción): 
-    return render(request, '404.html', estado=404)
+# Vista de la página con el error 404.
+class Error404(TemplateView):
+    template_name = 'AppHome/error404.html'

@@ -58,7 +58,7 @@ https://templatemo.com/tm-579-cyborg-gaming
                   <li><a href="{% url 'home' %}" class="active">Home</a></li>
                   <li><a href="{% url 'lista' user.id %}" class="active">Blogs</a></li>
                   <li><a href="{% url 'crear-blog' %}" class="active">Crear Blog</a></li>
-                  <li><a href="{% url 'error' %}" class="active">Mensajes</a></li>
+                  <li><a href="{% url 'mensaje' %}" class="active">Mensajes</a></li>
                   <li><a href="{% url 'about' %}" class="active">About</a></li>
                   {% if user.is_authenticated %}
                     {% if user.avatar %}
@@ -96,7 +96,7 @@ https://templatemo.com/tm-579-cyborg-gaming
             <li><a href="{% url 'home' %}">Home</a></li>
             <li><a href="{% url 'lista' user.id %}" >Blogs</a></li>
             <li><a href="{% url 'crear-blog' %}" >Crear Blog</a></li>
-            <li><a href="{% url 'error' %}" >Mensajes</a></li>
+            <li><a href="{% url 'mensaje' %}" >Mensajes</a></li>
             <li><a href="{% url 'about' %}" >About</a></li>
         </div>
       </div>
